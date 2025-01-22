@@ -1,13 +1,13 @@
 import Link from "next/link";
 import ContactForm from "../components/ContactForm";
 import { Button } from "@nextui-org/button";
-import { IconCheckList, IconGuage, IconHandShake, IconTools, IconUsersGroup } from "../components/Icons";
+import { IconCaretRightFilled, IconChartBarPopular, IconCheckList, IconClipboardData, IconGuage, IconHandShake, IconTools, IconUpload, IconUsersGroup } from "../components/Icons";
 
 const Home = () => {
   return (
     <div className="container max-w-5xl mx-auto px-8 space-y-8 py-8 md:space-y-24 md:py-24">
       <section className="flex flex-col items-center">
-        <h1 className="text-4xl font-bold mb-4">Stop Being Nervous About AI—Partner with Hot Blue Tree and Get Excited About AI</h1>
+        <h1 className="text-4xl font-bold mb-4">From AI Anxiety to Excitement — Hot Blue Tree Makes It Happen!</h1>
         <p className="text-xl mb-6">We specialize in building long-term partnerships to deliver tailored AI deployments that transform businesses and drive measurable results.</p>
         <div className="w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
           <Button
@@ -29,18 +29,8 @@ const Home = () => {
           >
             Get in touch
           </Button>
-        </div>        
+        </div>
       </section>
-      {/* <section className="">
-        <h2 className="text-3xl font-bold mb-4 text-center">Your AI Transformation Partner</h2>
-        <p className="text-lg mb-6 text-center">At Hot Blue Tree, we don’t just consult and tell you what to do. We become your AI deployment partner, guiding you every step of the way—from roadmap development to ongoing monitoring and optimization.</p>
-        <div className="text-center">
-          <button className="bg-brand-blue text-white py-2 px-4 rounded">Explore Our AI Solutions</button>
-        </div>
-        <div className="mt-8">
-          <img src="/images/team-placeholder.jpg" alt="A team collaborating with futuristic AI tools" className="mx-auto" />
-        </div>
-      </section> */}
       <section id="values" className="bg-gray-100 flex flex-col items-center p-4 rounded-2xl">
         <h2 className="text-3xl font-bold mb-4 text-center">Why Partner with Hot Blue Tree?</h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 justify-center text-center mb-6 gap-8 p-4">
@@ -76,11 +66,52 @@ const Home = () => {
           </li>
         </ul>
         <Button
+          href="/contact"
+          as={Link}
           className="bg-gradient-to-tr from-blue-500 to-cyan-500 text-white"
           size="lg"
         >
           Get started
         </Button>
+      </section>
+      <section className="mb-6">
+        <h2 className="text-3xl font-bold mb-4 text-center">Your AI Transformation Partner</h2>
+        <p className="text-lg mb-6">Hot Blue Tree is all about helping small and medium-sized businesses unlock the potential of AI to make their operations smoother, smarter, and more innovative. We focus on creating custom solutions that fit your business needs, from streamlining processes to boosting productivity and showing clear, measurable results. Think of us as your partner in making AI work for you — whether that's building a roadmap for new technology, training your team to get comfortable with it, or making sure your data stays safe. We work with businesses that are ready to embrace change and see the value AI can bring, even if they're not tech experts. Our goal is to make AI approachable, affordable, and a game-changer for your business.</p>
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-around text-brand-blue gap-2">
+          <div className="text-lg font-bold flex flex-row md:flex-col items-center uppercase gap-4">
+            <span className="text-7xl md:text-8xl text-cyan-500">
+              <IconClipboardData />
+            </span>
+            Assessment
+          </div>
+          <span className="text-2xl text-brand-blue rotate-90 md:rotate-0 mx-auto">
+            <IconCaretRightFilled />
+          </span>
+          <div className="text-lg font-bold flex flex-row md:flex-col items-center uppercase gap-4">
+            <span className="text-7xl md:text-8xl text-cyan-500">
+              <IconTools />
+            </span>
+            Custom&nbsp;solutions
+          </div>
+          <span className="text-2xl text-brand-blue rotate-90 md:rotate-0 mx-auto">
+            <IconCaretRightFilled />
+          </span>
+          <div className="text-lg font-bold flex flex-row md:flex-col items-center uppercase gap-4">
+            <span className="text-7xl md:text-8xl text-cyan-500">
+              <IconUpload />
+            </span>
+            Implementation
+          </div>
+          <span className="text-2xl text-brand-blue rotate-90 md:rotate-0 mx-auto">
+            <IconCaretRightFilled />
+          </span>
+          <div className="text-lg font-bold flex flex-row md:flex-col items-center uppercase gap-4">
+            <span className="text-7xl md:text-8xl text-cyan-500">
+              <IconChartBarPopular />
+            </span>
+            Results
+          </div>
+        </div>
       </section>
       <section className="bg-gray-300 max-w-xl mx-auto rounded-2xl p-4">
         <h2 className="text-center font-bold text-3xl mb-4">Schedule a free consultation</h2>
