@@ -8,7 +8,7 @@ const Home = () => {
     <div className="container max-w-5xl mx-auto px-8 space-y-8 py-8 md:space-y-24 md:py-24">
       <section className="flex flex-col items-center">
         <h1 className="text-4xl font-bold mb-4">From AI Anxiety to Excitement — Hot Blue Tree Makes It Happen!</h1>
-        <p className="text-xl mb-6">We specialize in building long-term partnerships to deliver tailored AI deployments that transform businesses and drive measurable results.</p>
+        <p className="text-xl mb-6">We specialise in building long-term partnerships to deliver tailored AI deployments that transform businesses and drive measurable results.</p>
         <div className="w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4">
           <Button
             href="#values"
@@ -44,7 +44,7 @@ const Home = () => {
             <span className="text-8xl text-cyan-500">
               <IconTools />
             </span>
-            Customized AI deployments tailored to your needs
+            Customised AI deployments tailored to your needs
           </li>
           <li className="flex flex-col items-center space-y-2">
             <span className="text-8xl text-cyan-500">
@@ -56,7 +56,7 @@ const Home = () => {
             <span className="text-8xl text-cyan-500">
               <IconGuage />
             </span>
-            Ongoing monitoring and updates to keep your systems optimized
+            Ongoing monitoring and updates to keep your systems optimised
           </li>
           <li className="flex flex-col items-center space-y-2">
             <span className="text-8xl text-cyan-500">
