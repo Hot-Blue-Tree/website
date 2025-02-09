@@ -16,7 +16,7 @@ export const LogoHtmlText: React.FC = () => {
                     </span>
                     <div className="flex flex-row justify-around items-center gap-2 px-2">
                         <hr className='flex-1 h-1 bg-brand-blue'/>
-                        <h2 className='text-lg text-center font-bold tracking-widest text-brand-blue uppercase'>Consulting</h2>
+                        <h2 className='text-lg text-center font-bold tracking-widest text-brand-blue uppercase'>AI Consulting</h2>
                         <hr className='flex-1 h-1 bg-brand-blue'/>
                     </div>
                     <p className='text-lg text-center font-medium text-brand-blue -mt-1.5'>Rooted in your Success</p>
