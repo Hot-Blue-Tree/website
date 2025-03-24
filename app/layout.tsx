@@ -2,13 +2,41 @@ import './globals.css'
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import {Providers} from "./providers";
+import { Metadata, Viewport } from 'next';
 
-import favicon_appletouch from "/public/apple-touch-icon.png";
-import favicon_32px from "/public/favicon-32x32.png";
-import favicon_16px from "/public/favicon-16x16.png";
+export const metadata: Metadata = {
+  title: 'Hot Blue Tree',
+  icons: {
+    apple: [
+      { url: '/apple-icon-57x57.png', sizes: '57x57' },
+      { url: '/apple-icon-60x60.png', sizes: '60x60' },
+      { url: '/apple-icon-72x72.png', sizes: '72x72' },
+      { url: '/apple-icon-76x76.png', sizes: '76x76' },
+      { url: '/apple-icon-114x114.png', sizes: '114x114' },
+      { url: '/apple-icon-120x120.png', sizes: '120x120' },
+      { url: '/apple-icon-144x144.png', sizes: '144x144' },
+      { url: '/apple-icon-152x152.png', sizes: '152x152' },
+      { url: '/apple-icon-180x180.png', sizes: '180x180' },
+    ],
+    icon: [
+      { url: '/android-icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'manifest', url: '/manifest.json' },
+    ]
+  },
+  other: {
+    'msapplication-TileColor': '#ffffff',
+    'msapplication-TileImage': '/ms-icon-144x144.png',
+  }
+};
 
-import logo from '../public/logo.jpg';
-import logo_notext from '../public/logo_notext.jpg';
+export const viewport: Viewport = {
+  themeColor: '#ffffff'
+};
 
 export default function RootLayout({
   children,
@@ -18,19 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Hot Blue Tree</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="180x180" href={favicon_appletouch.src}/>
-        <link rel="icon" type="image/png" sizes="32x32" href={favicon_32px.src}/>
-        <link rel="icon" type="image/png" sizes="16x16" href={favicon_16px.src}/>
-        <link rel="manifest" href="/public/site.webmanifest"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </head>
-      <body className="">
+      <body>
         <Providers>
           <div className='w-full min-h-screen h-0 flex flex-col'>
             <Header />        
-              {children}
+            {children}
             <Footer />
           </div>
         </Providers>
