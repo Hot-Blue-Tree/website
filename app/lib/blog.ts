@@ -1,3 +1,5 @@
+'use server';
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -91,12 +93,3 @@ export async function getPostsByCategory(category: string): Promise<BlogPost[]> 
   const posts = await getAllPosts();
   return posts.filter(post => post.category.toLowerCase() === category.toLowerCase());
 } 
-
-export function getTagColor(tagName: string): string {
-  // hash the name of the tag and use it to get a hue value (0-360)
-  const hash = tagName.split('').reduce((acc, char) => {
-    return acc + char.charCodeAt(0);
-  }, 0);
-  const hue = hash % 360;
-  return `hsla(${hue}, 100%, 90%, 0.5)`;
-}

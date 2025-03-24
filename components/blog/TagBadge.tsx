@@ -1,4 +1,4 @@
-import { getTagColor } from "../../app/lib/blog";
+import { getTagColor } from "./helpers";
 
 interface TagBadgeProps {
   tag: string;

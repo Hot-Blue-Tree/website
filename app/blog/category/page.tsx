@@ -1,6 +1,6 @@
 import { getAllCategories, getAllPosts } from '../../lib/blog';
 import CategoryCard from '../../../components/blog/CategoryCard';
-import BackButton from '../../../components/blog/BackButton';
+import { BackButton } from '../../../components/blog/Buttons';
 
 export default async function CategoryIndex() {
   const [categories, posts] = await Promise.all([
@@ -18,7 +18,7 @@ export default async function CategoryIndex() {
     <div className="container max-w-5xl mx-auto flex-1 py-8 px-4">
       <BackButton href="/blog" text="Blog home" />
       <h1 className="text-4xl font-bold mb-8">All categories</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category) => (
           <CategoryCard key={category} category={category} count={categoryCount[category]} />
         ))}

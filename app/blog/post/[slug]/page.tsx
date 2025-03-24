@@ -1,4 +1,4 @@
-import BackButton from "../../../../components/blog/BackButton";
+import { BackButton } from "../../../../components/blog/Buttons";
 import { TagBadge } from "../../../../components/blog/TagBadge";
 import { getAllPosts, getPostBySlug } from "../../../lib/blog";
 import type { BlogPost } from "../../../lib/blog";
@@ -51,7 +51,7 @@ export default async function BlogPost({
   const post = await getPostBySlug(params.slug);
 
   return (
-    <article className="container max-w-5xl mx-auto flex-1 py-8 px-4">
+    <article className="container max-w-5xl mx-auto flex-1 pt-8 pb-24 px-4">
       <BackButton href="/blog" text="Blog home" />
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>

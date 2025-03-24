@@ -1,6 +1,7 @@
 import { getAllPosts, getAllCategories } from '../lib/blog';
 import PostCard from '../../components/blog/PostCard';
 import CategoryCard from '../../components/blog/CategoryCard';
+import { ViewAllButton } from '../../components/blog/Buttons';
 
 export default async function BlogIndex() {
   const [posts, categories] = await Promise.all([
@@ -25,7 +26,10 @@ export default async function BlogIndex() {
       <h1 className="text-4xl font-bold mb-8">Blue Tree Blog</h1>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Recent posts</h2>
+        <div className="flex flex-row justify-between items-center">
+          <h2 className="text-2xl font-semibold mb-4">Recent posts</h2>
+          <ViewAllButton href="/blog/post" text="View all posts" />
+        </div>
         <div className="flex flex-col gap-4">
           {recentPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
@@ -34,7 +38,10 @@ export default async function BlogIndex() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Top categories</h2>
+        <div className="flex flex-row justify-between items-center">
+          <h2 className="text-2xl font-semibold mb-4">Top categories</h2>
+          <ViewAllButton href="/blog/category" text="View all categories" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {topCategories.map((category) => (
             <CategoryCard key={category.category} category={category.category} count={category.count} />

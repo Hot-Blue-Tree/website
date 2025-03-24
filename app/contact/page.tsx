@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
       <section className="container max-w-3xl mx-auto flex-1 p-8">
-        <div className="border max-w-xl mx-auto rounded-2xl p-8">
+        <div className="border max-w-xl mx-auto rounded-xl p-8">
           <h2 className="text-3xl font-bold mb-4 text-center">
             Schedule a free consultation
           </h2>

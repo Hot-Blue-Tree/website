@@ -1,7 +1,7 @@
 import { getPostsByCategory, getAllCategories } from '../../../lib/blog';
 import { notFound } from 'next/navigation';
 import PostCard from '../../../../components/blog/PostCard';
-import BackButton from '../../../../components/blog/BackButton';
+import { BackButton } from '../../../../components/blog/Buttons';
 
 interface CategoryPageProps {
   params: {

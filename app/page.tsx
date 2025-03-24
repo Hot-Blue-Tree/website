@@ -31,7 +31,7 @@ const Home = () => {
           </Button>
         </div>
       </section>
-      <section id="values" className="bg-gray-100 flex flex-col items-center p-4 rounded-2xl">
+      <section id="values" className="bg-gray-100 flex flex-col items-center p-4 rounded-xl">
         <h2 className="text-3xl font-bold mb-4 text-center">Why Partner with Hot Blue Tree?</h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 justify-center text-center mb-6 gap-8 p-4">
           <li className="flex flex-col items-center space-y-2">
@@ -113,7 +113,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="border max-w-xl mx-auto rounded-2xl p-8">
+      <section className="border max-w-xl mx-auto rounded-xl p-8">
         <h2 className="text-center font-bold text-3xl mb-6">Schedule a free consultation</h2>
         <ContactForm />
       </section>
