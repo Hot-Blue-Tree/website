@@ -1,8 +1,9 @@
 import { BackButton } from "../../../../components/blog/Buttons";
 import { TagBadge } from "../../../../components/blog/TagBadge";
 import { getAllPosts, getPostBySlug } from "../../../lib/blog";
-import type { BlogPost } from "../../../lib/blog";
 import { Metadata } from "next";
+import { BlogPost } from "../../../lib/types";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -16,7 +17,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const post: BlogPost | null = await getPostBySlug(params.slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return {
     title: post.title,
@@ -43,12 +48,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({
+export default async function Post({
   params,
 }: {
   params: { slug: string };
 }) {
-  const post = await getPostBySlug(params.slug);
+  const post: BlogPost | null = await getPostBySlug(params.slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <article className="container max-w-5xl mx-auto flex-1 pt-8 pb-24 px-4">

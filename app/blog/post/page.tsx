@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { BlogPost, getAllPosts } from '../../lib/blog';
-import Link from 'next/link';
+import { getAllPosts } from '../../lib/blog';
 import PostCard from '../../../components/blog/PostCard';
 import { IconCaretRightFilled } from '../../../components/Icons';
 import { getTagColor } from '../../../components/blog/helpers';
 import { BackButton } from '../../../components/blog/Buttons';
+import { BlogPost } from '../../lib/types';
 
 type SortOption = 'date' | 'title';
 type SortOrder = 'asc' | 'desc';
