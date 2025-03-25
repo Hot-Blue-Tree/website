@@ -19,7 +19,7 @@ export default function CategoryCard({ category, count }: CategoryCardProps) {
 
 const CategoryCountBadge = ({ count }: { count: number }) => {
   return (
-    <span className="text-sm bg-gray-200 text-gray-700 px-4 py-1 rounded-full">
+    <span className="text-sm bg-gray-200 px-4 py-1 rounded-full">
       {count} post{count === 1 ? '' : 's'}
     </span>
   );

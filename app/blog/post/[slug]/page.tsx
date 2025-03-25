@@ -70,6 +70,8 @@ export default async function Post({
           <span>{new Date(post.date).toLocaleDateString()}</span>
           <span className="mx-2">•</span>
           <span>{post.author}</span>
+          <span className="mx-2">•</span>
+          <span>{post.category}</span>
         </div>
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
