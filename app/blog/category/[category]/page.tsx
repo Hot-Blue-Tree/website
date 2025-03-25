@@ -36,12 +36,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="container max-w-5xl mx-auto flex-1 py-8 px-4">
-      <div className="flex flex-col mb-8">
-        <BackButton href="/blog/category" text="View all categories" />
-        <h1 className="text-4xl">All posts in category: <span className="font-bold">{properCategoryName}</span></h1>
-      </div>
-
-      <div className="space-y-8">
+      <BackButton href="/blog/category" text="View all categories" />
+      <h1 className="text-4xl mb-8">All posts in category: <span className="font-bold">{properCategoryName}</span></h1>
+      <div className="flex flex-col gap-4">
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}

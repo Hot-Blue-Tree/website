@@ -24,7 +24,7 @@ export default function PostCard({ post }: PostCardProps) {
           <span className="mx-2">•</span>
           <span>{post.author}</span>
         </div>
-        {post.excerpt && <p className="text-gray-700">{post.excerpt}</p>}
+        {post.excerpt && <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: post.excerpt }} />}
         <div className="mt-4 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <TagBadge key={tag} tag={tag} />
