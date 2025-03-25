@@ -39,7 +39,7 @@ function generateSearchExcerpt(content: string, searchQuery: string, excerptLeng
   
   // Highlight the search query by wrapping it in a mark tag
   const queryRegex = new RegExp(searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-  excerpt = excerpt.replace(queryRegex, match => `<mark class="bg-yellow-200 ring-4 ring-yellow-200 rounded-md">${match}</mark>`);
+  excerpt = excerpt.replace(queryRegex, match => `<mark class="bg-yellow-200 -z-10">${match}</mark>`);
   
   return excerpt;
 }
