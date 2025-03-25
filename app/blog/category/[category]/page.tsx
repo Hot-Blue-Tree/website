@@ -2,12 +2,7 @@ import { getPostsByCategory, getAllCategories } from '../../../lib/blog';
 import { notFound } from 'next/navigation';
 import PostCard from '../../../../components/blog/PostCard';
 import { BackButton } from '../../../../components/blog/Buttons';
-
-interface CategoryPageProps {
-  params: {
-    category: string;
-  };
-}
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const categories = await getAllCategories();
@@ -16,8 +11,44 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const decodedCategory = params.category.replace(/-/g, ' ');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}): Promise<Metadata> {
+  const { category } = await params;
+  const decodedCategory = category.replace(/-/g, ' ');
+  const categories = await getAllCategories();
+  
+  if (!categories.some(cat => cat.toLowerCase() === decodedCategory.toLowerCase())) {
+    return {
+      title: 'Category Not Found',
+      description: 'The requested category could not be found.',
+    };
+  }
+
+  const posts = await getPostsByCategory(decodedCategory);
+  if (posts.length === 0) {
+    return {
+      title: 'No Posts Found',
+      description: 'No posts found in this category.',
+    };
+  }
+
+  const properCategoryName = posts[0].category;
+  return {
+    title: `Posts in ${properCategoryName}`,
+    description: `Browse all blog posts in the ${properCategoryName} category.`,
+  };
+}
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category } = await params;
+  const decodedCategory = category.replace(/-/g, ' ');
   const categories = await getAllCategories();
   
   // Check if the category exists
