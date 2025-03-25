@@ -10,7 +10,7 @@ export function BackButton({ href, text }: ButtonProps) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center uppercase hover:bg-gray-200 active:ring-2 active:ring-gray-200 text-sm px-3 py-1 gap-1 rounded-full mb-4"
+      className="inline-flex items-center uppercase hover:bg-slate-200 active:ring-2 active:ring-slate-200 text-sm px-3 py-1 gap-1 rounded-full mb-4"
     >
       <IconCaretRightFilled className="rotate-180 -ml-1" />
       {text}
@@ -20,7 +20,7 @@ export function BackButton({ href, text }: ButtonProps) {
 
 export function ViewAllButton({ href, text }: ButtonProps) {
   return (
-    <Link href={href} className="inline-flex items-center hover:bg-gray-200 active:ring-2 active:ring-gray-200 text-sm px-3 py-1 gap-1 rounded-full">
+    <Link href={href} className="inline-flex items-center hover:bg-slate-200 active:ring-2 active:ring-slate-200 text-sm px-3 py-1 gap-1 rounded-full">
       {text}
       <IconCaretRightFilled className="-mr-1" />
     </Link>

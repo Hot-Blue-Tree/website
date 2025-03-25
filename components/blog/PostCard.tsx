@@ -19,12 +19,12 @@ export default function PostCard({ post }: PostCardProps) {
         <h2 className="text-2xl font-semibold group-hover:text-blue-600 mb-2">
           {post.title}
         </h2>
-        <div className="text-gray-600 mb-4">
+        <div className="text-slate-600 mb-4">
           <span>{new Date(post.date).toLocaleDateString()}</span>
           <span className="mx-2">•</span>
           <span>{post.author}</span>
         </div>
-        {post.excerpt && <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: post.excerpt }} />}
+        {post.excerpt && <p className="text-slate-700" dangerouslySetInnerHTML={{ __html: post.excerpt }} />}
         <div className="mt-4 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <TagBadge key={tag} tag={tag} />

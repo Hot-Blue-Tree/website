@@ -11,7 +11,7 @@ export default function CategoryCard({ category, count }: CategoryCardProps) {
       href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
       className="flex flex-row justify-between items-center border bg-white rounded-xl space-x-4 p-4 shadow-sm hover:shadow-lg transition-shadow"
     >
-      <h3 className="text-lg font-medium text-gray-800">{category}</h3>
+      <h3 className="text-lg font-medium text-slate-800">{category}</h3>
       <CategoryCountBadge count={count} />
     </Link>
   );
@@ -19,7 +19,7 @@ export default function CategoryCard({ category, count }: CategoryCardProps) {
 
 const CategoryCountBadge = ({ count }: { count: number }) => {
   return (
-    <span className="text-sm bg-gray-200 px-4 py-1 rounded-full">
+    <span className="text-sm bg-slate-200 px-4 py-1 rounded-full">
       {count} post{count === 1 ? '' : 's'}
     </span>
   );

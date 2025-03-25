@@ -10,7 +10,7 @@ export default function NotFound() {
       </div>
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold text-brand-blue">404 - Page Not Found</h1>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl text-slate-600">
           Oops! The page you're looking for seems to have wandered off.
         </p>
       </div>
