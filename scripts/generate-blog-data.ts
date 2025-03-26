@@ -8,6 +8,27 @@ import gfm from 'remark-gfm';
 const postsDirectory = path.join(process.cwd(), 'app/_posts');
 const outputPath = path.join(process.cwd(), 'app/lib/blog-data.json');
 
+interface BlogMetadata {
+  title: string;
+  date: string;
+  tags: string[];
+  author: string;
+  category: string;
+  excerpt: string;
+  doNotPublish?: boolean;
+}
+
+function parseMetadata(jsonPath: string): BlogMetadata {
+  const metadata = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+  
+  // Normalize tags to lowercase
+  if (metadata.tags && Array.isArray(metadata.tags)) {
+    metadata.tags = metadata.tags.map((tag: string) => tag.toLowerCase());
+  }
+  
+  return metadata;
+}
+
 async function generateBlogData() {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = await Promise.all(
@@ -22,8 +43,8 @@ async function generateBlogData() {
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { content } = matter(fileContents);
         
-        // Read JSON metadata
-        const metadata = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        // Parse metadata using the new function
+        const metadata = parseMetadata(jsonPath);
         
         // Convert markdown to HTML
         const processedContent = await remark()
