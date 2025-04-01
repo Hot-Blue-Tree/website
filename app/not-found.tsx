@@ -5,7 +5,7 @@ import { LogoSvg } from "../components/Logo";
 export default function NotFound() {
   return (
     <div className="container max-w-5xl mx-auto px-8 flex-1 flex flex-col items-center justify-center space-y-8">
-      <div className="flex items-center justify-center size-40 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-500 text-white">
+      <div className="flex items-center justify-center size-40 rounded-full bg-gradient-to-t from-blue-500 to-cyan-500 text-white">
         <LogoSvg />
       </div>
       <div className="text-center space-y-4">
