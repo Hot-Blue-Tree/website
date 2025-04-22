@@ -12,7 +12,6 @@ import {
   IconUpload,
   IconUsersGroup,
 } from "../components/Icons";
-import PipedriveContactForm from "../components/PipedriveContactForm";
 
 const Home = () => {
   return (
@@ -150,10 +149,11 @@ const Home = () => {
             </div>
           </div>
         </section>
-      </div>
-      <div className="flex flex-col items-center w-full bg-slate-100 py-8 md:py-24">
-        <section className="container bg-white border max-w-xl rounded-xl p-8">
-          <PipedriveContactForm />
+        <section className="border max-w-xl mx-auto rounded-xl p-8">
+          <h2 className="text-center font-bold text-3xl mb-6">
+            Schedule a free consultation
+          </h2>
+          <ContactForm />
         </section>
       </div>
     </>
