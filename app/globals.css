@@ -3,5 +3,36 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@keyframes ping-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    transform-origin: center;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+    transform-origin: center;
+  }
+}
+
+.animate-ping-dot-1 {
+  display: inline-block;
+  animation: ping-dot 1.5s infinite;
+  animation-delay: 0s;
+}
+
+.animate-ping-dot-2 {
+  display: inline-block;
+  animation: ping-dot 1.5s infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-ping-dot-3 {
+  display: inline-block;
+  animation: ping-dot 1.5s infinite;
+  animation-delay: 0.4s;
 }
